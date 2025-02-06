@@ -1,0 +1,80 @@
+const activities = [
+  {
+    username: "Username", 
+    type: "workout",
+    id: 1,
+    title: "Morning Workout",
+    duration: 30,
+    //Optional
+    profilePic: "default_pfp.png",
+    description: "Ran in the park.",
+    calories: 0,
+    heathrate: 0,
+    moodrating: "",     
+  },
+  {
+    username: "Oscar",
+    type: "run",
+    id: 2,
+    title: "Morning Run",
+    distance: 5,
+    duration: 25,
+    //Optional
+    profilePic: "Oscar.png",
+    description: "Ran in the park.",
+    calories: 0,
+    heathrate: 0,
+    moodrating: "",      
+  },
+  {
+    username: "another",
+    type: "workout",
+    id: 3,
+    title: "Evening Yoga",
+    duration: 90,
+    description: "Relaxing evening session.",
+    calories: 0,
+    heathrate: 0,
+    moodrating: "",     
+  },
+  {
+    username: "Username",
+    type: "run",
+    id: 4,
+    title: "Intervals",
+    distance: 13,
+    duration: 123,
+    description: "400x10 intervals with warmup and cooldown",
+    calories: 0,
+    heathrate: 0,
+    moodrating: "",   
+  },
+  {
+    username: "Username",
+    type: "run",
+    id: 5,
+    title: "Evening Jog",
+    distance: 3,
+    duration: 55,
+    description: "A slow jog around the neighborhood.",
+    calories: 0,
+    heathrate: 0,
+    moodrating: "",   
+  },
+  {
+    username: "aUser",
+    type: "workout",
+    id: 6,
+    title: "Workout",
+    duration: 10,
+    description: "Strength training session.",
+    calories: 0,
+    heathrate: 0,
+    moodrating: "",   
+  },
+];
+
+export default activities;
+
+  
+  

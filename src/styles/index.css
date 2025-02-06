@@ -1,4 +1,4 @@
-/* Reset styles */
+/* ---- Reset styles ---- */
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +9,8 @@ body {
   font-family: Arial, sans-serif; 
   background-color: #f4f4f9;
   color: #333;
-  line-height: 1.6; 
+  line-height: 1.6;
+  font-size: 16px; 
 }
 
 a {
@@ -20,84 +21,200 @@ a {
 ul {
   list-style: none;
 }
-/* End of reset */
 
-/* ----- Navbar ------ */
+
+/* ---- End of reset ---- */
+
+/* Flex */
+
+/* HomePage */
+.home-wrapper {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.home-main {
+  flex: 2;
+}
+
+.home-sidebar {
+  flex: 1;
+  
+}
+
+.flex-empty {
+  flex: 0.3;
+}
+
+/* ActivityPage */
+
+.activity-page-wrapper {
+  display: flex;
+  gap: 1rem;
+}
+
+.activity-page-main {
+  flex: 2;
+}
+
+.activity-page-sidebar {
+  flex: 1;
+}
+
+.activity-page-empty {
+  flex: 0.2;
+}
+
+/* ProfilePage*/
+.profile-wrapper {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.profile-main {
+  flex: 1.5;
+}
+
+.profile-empty {
+  flex: 0.5;
+}
+
+/* ---------- Layout Components ---------- */
+
+/* ---- Navbar ---- */
 .navbar {
-  position: sticky; /* stays at the top when scrolling */
-  top: 0; /* sticks to the top */
-  background-color: #ffffff; /* Background color */
-  z-index: 1000; /* stays above other content */
-  text-align: center; /* Center-aligns content inside the navbar */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* shadow */
-  padding: 10px 0; /*  spacing */
+  position: sticky;
+  top: 0;
+  background-color: #ffffff;
+  z-index: 1000;
+  display: flex; 
+  align-items: center;
+  justify-content: space-between; 
+  padding: 1rem 2rem;
+  box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
+}
+
+.navbar-title {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #000;
+  border: 0.2rem solid rgb(7, 7, 7);
 }
 
 .navbar-links {
-  display: inline-flex; /* lines up the text */
-  gap: 40px; /* space between links */
+  display: flex;
+  gap: 2.5rem;
 }
 
 .navbar-links li {
-  font-size: 18px; /* Font-size */
+  font-size: 1.125rem;
 }
 
 .navbar-links a {
-  color: #333333; /* Text color */
-  font-weight: bold; /* Makes the text bold */
-  transition: color 0.3s ease; /* Adds a hover  */
+  color: #333333;
+  font-weight: bold;
+  transition: color 0.3s ease;
 }
 
 .navbar-links a:hover {
-  color: #007BFF; /* Changes color on hover */
+  color: #007BFF;
 }
-/* End of Navbar*/
 
-/* Footer */
+.navbarbilde {
+  display: flex;
+  gap: 20px;
+}
+
+.navbarbilde img {
+  width: 30px;
+  height: 30px;
+}
+
+.searchbox {
+  display: flex; 
+  align-items: center; 
+  gap: 0.125rem; 
+  flex: 1; 
+  justify-content: right; 
+  margin-right: 2rem; 
+}
+
+.searchbox input {
+  width: 30%; 
+  padding: 0.5rem 0.75rem;
+  border: 0.0625rem solid #ccc;
+  border-radius: 0.25rem 0 0 0.25rem;
+  font-size: 1rem;
+}
+
+.searchbutton {
+  padding: 0.5rem 1rem;
+  background-color: #070707;
+  color: white;
+  border: none;
+  border-radius: 0 0.25rem 0.25rem 0;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.searchbutton:hover {
+  background-color: #003d80;
+}
+
+/* ---- End of Navbar ---- */
+
+/* ---- Footer ---- */
 .footer {
   background-color: #333;
   color: #fff;
-  text-align: center;
   padding: 20px;
-  position: relative;
 }
 
-.footer p {
-  margin: 0;
+#footerLeft {
+  float: left;
+  margin: auto -999px auto auto;
+  padding: 0;
+  text-align: start;
+}
+
+#footerMid {
+  text-align:center;
 }
 
 .back-to-top {
-  background-color: #007bff;
+  background-color: #0a71de;
   color: white;
   border: none;
   padding: 10px 20px;
   cursor: pointer;
   border-radius: 5px;
-  font-size: 16px;
-  margin-top: 10px;
-  transition: background-color 0.3s ease;
+  font-size: 1rem;
+  margin-top: 1.4rem;
+  transition: background-color 0.4s ease;
+
 }
 
 .back-to-top:hover {
-  background-color: #0056b3;
+  background-color: #1b84f4;
 }
 
+/* ----- End of Footer ----- */
 
-/* End of Footer */
 
-/* Activity Feed */
+/* ------ General Components ------*/
+/* Activity feed */
 .activity-feed {
-  max-width: 600px;
-  margin: 0 auto; /* Feed will stay in the middle */
-  padding: 20px;
+  max-width: 100%;
+  margin: 1rem; /* Keeps feed positioned */
+  padding: 1.3rem;
   background-color: #fff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+  box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
 }
 
 .activity-feed h2 {
   font-size: 1.5rem;
-  margin-bottom: 10px;
+  margin-bottom: 0.8rem;
   text-align: center;
 }
 
@@ -106,27 +223,654 @@ ul {
   padding: 0;
 }
 
-.activity-feed li {
-  margin: 10px 0;
-  padding: 10px;
-  background-color: #f9f9f9;
-  border-radius: 4px;
+.activity-item {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  border-radius: 0.5rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-/* Workout Activity */
-.workout {
-  margin-top: 30px;
-  background-color: #e0f7fa;
-  border-left: 5px solid #00796b;
+.activity-item img {
+  width: 35px;
+  height: 35px;
+  border-radius: 20px;
 }
 
-/* Run activity */
-.run {
-  margin-top: 30px;
-  background-color: #e8f5e9;
-  border-left: 5px solid #388e3c
+/* ---- Activity Type Styles ---- */
+/* we can add unique things like images (shoe for running or a bar for workout etc)*/
+.activity-workout {
+  background-color:#f5fdf4; 
 }
 
-/* End of activity feed */
+.activity-run {
+  background-color:#f4fdfb ;
+}
 
+/* ---- Social buttons ---- */
+.activity-social {
+  margin-top: 1rem;
+}
+
+.activity-social ul {
+  display: flex;
+  gap: 0.5rem; 
+  padding: 0;
+}
+
+.activity-social li {
+  list-style: none;
+}
+
+.activity-social button {
+  background-color: #0ddbae;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+}
+
+.activity-social button:hover {
+  background-color: #0ff5c3;
+}
+
+#like-count {
+  margin-left: auto;
+}
+
+
+/* ---- Common Activity Styling ---- */
+.activity-item h4 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.activity-item p {
+  margin: 0.2rem 0;
+  font-size: 1rem;
+  color: #666;
+}
+
+.activity-item strong {
+  color: #000;
+}
+
+/* ----- End of activity feed ---- */
+
+/* ----- Activity siden ------ */
+
+/*start of progressbar*/
+.progress-chart {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(90deg, #00796b, #388e3c);
+  box-shadow: 0 2px 4px rgba(100, 162, 66, 0.1);
+  border-radius: 0.5rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+
+.filter-button:hover {
+  background: #0d44b0;
+}
+
+.progress-bar-container {
+  position: relative;
+  width: 100%;  
+  height: 0.5rem;
+  background: #e5e7eb;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.progress-bar {
+  height: 100%;
+  background: black ;
+  border-radius: 0.5rem;
+  transition: width 0.5s ease-in-out;
+}
+
+.progress-value {
+  position: absolute;
+  top: -1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.875rem;
+  color: #f2f4f9;
+}
+
+.chart-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 10rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  background: #f9fafb;
+}
+
+.chart-bar {
+  width: 15%;
+  background: linear-gradient(90deg, #00796b, #388e3c);
+  border-radius: 0.25rem;
+  transition: height 0.5s ease-in-out;
+}
+/*progressbar done*/
+
+/*Satrt of goals*/
+/* Container styling */
+.goals-container {
+  width: 150%;
+  max-width: 70 rem;
+  padding: 0.5rem;
+  border: 0.1rem solid rgb(198, 198, 198);
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  background-color: white;
+  
+}
+
+/* Header styling */
+.goals-header {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.goals-header h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Button styling */
+.add-goal-button {
+  background-color: #333;
+  color: #fff;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.add-goal-button:hover {
+  background-color: #0d44b0;
+}
+
+/* Content styling */
+.goals-content {
+  font-size: 1rem;
+  color: #333;
+}
+
+.goal-category {
+  margin-bottom: 1.5rem;
+}
+
+.goal-category h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.goal-category ul {
+  list-style: disc;
+  padding-left: 2rem;
+}
+
+.goal-category li {
+  margin-bottom: 0.5rem;
+}
+
+/*knapp til add goal*/
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+} 
+
+.popup input {
+  width: 100%;
+  padding: 8px;
+  margin: 10px 0;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+.popup-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.add-goal-button, .close-popup-button {
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+.add-goal-button {
+  background-color: #000000;
+  color: white;
+}
+
+.close-popup-button {
+  background-color: #c70223;
+  color: white;
+}
+/*knapp til add goal*/
+
+
+/*goals done*/
+
+/*Satart of activity list*/
+
+.activity-list-container {
+  width: 100%; 
+  margin: 0 auto;
+  padding: 1.5rem;
+  border: 0.1rem solid #ccc;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  background-color: white; 
+}
+
+.activity-list-header {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.divider {
+  border: none;
+  border-top: 0.1rem solid #ddd;
+  margin: 1rem 0;
+}
+
+.activity-item h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.activity-item p {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+.show-more-button {
+  display: block;
+  margin: 1rem auto 0;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background-color: #09090a;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.show-more-button:hover {
+  background-color: #0056b3;
+}
+
+/*activity list slutt*/
+
+/* ADD ACTIVITY GREIA*/
+
+.add-container {
+  width: 150%;
+  max-width: 70rem;
+  padding: 2rem;
+  background-color: #fff;
+  border: 0.1rem solid #ccc;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: row; 
+  align-items: center; 
+  gap: 1rem; 
+}
+
+.add-heading {
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+.add-button {
+  padding: 0.8rem 1.5rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #333;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+} 
+
+.add-button:hover {
+  background-color: #0056b3;
+}
+
+
+
+/* ADD ACTIVITY GREIA SLUTT*/
+
+
+
+/*Activity siden slutt*/
+
+/* ---- Profile Card ---- */
+
+.profileCard {
+    position: relative;
+    width: 19rem auto;
+    margin: 1rem;
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    border-radius: 1rem;
+    box-shadow: 0 0.7rem 1rem rgba(0, 0, 0, 0.1), 0 0.4rem 0.6rem rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    text-align: center;
+    
+
+}
+
+.gradient {
+    height: 120px;
+    background: linear-gradient(90deg, #00796b, #388e3c);
+}
+
+.profileCard ul {
+    padding: 0;
+    margin: 0;
+}
+
+.profileCard li {
+    margin: 0.66rem 0;
+}
+
+.profileCard img { /* tenker vi lar denna stå i px for nå*/
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    margin-top: -50px;
+    border: 4px solid #fff;
+    box-shadow: 0 0.7rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.profileCard .profileTitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+.profileTitle a:hover {
+  color: #2575fc;
+}
+.profileCard .profileDesc {
+    font-size: 1rem;
+    color: #777;
+    margin: 0.3rem 2rem 0.3rem 2rem/*5px 0 15px*/;
+}
+
+.profileStats {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0;
+    background: #f9f9f9;
+    border-top: 0.1rem solid #ddd;
+}
+
+.profileStats li {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem 2rem 1.5rem 2rem;
+}
+
+.profileStats label {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 3px;
+}
+
+.profileStats a {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #388e3c;
+    transition: color 0.2s ease;
+}
+
+.profileStats a:hover {
+    color: #00796b;
+}
+
+/* ---- End of Profile Card ---- */
+
+/* --- FIDGETSPINNER LOL --- */
+/*bare pølsevev ta her
+.fidgetSpinner {
+
+  height: 16rem;
+  width: 16rem;
+  border-radius: 50%;
+  pointer-events: none;
+  background-color: #0ddbae;
+  text-align: center;
+  
+}
+
+.fidgetSpinner img {
+  height: 16rem;
+  width: 16rem;
+  animation: bilde-spin 0.2s linear;
+}
+
+@keyframes bilde-spin {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+.fidgetSpinner button {
+  background-color: #0ddbae;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+}
+
+.fidgetSpinner button:hover {
+  background-color: #0056b3;
+}
+/* --- END OF FIDGETSPINNER :( --- */
+
+/* ---- Progress Home Page ---- */
+.progressBoxColumn {
+  display:flex;
+  flex-direction:column;
+  align-self:center;
+  justify-content:space-evenly;
+  height: 8rem;
+  width: 10rem;
+  align-items:base-line;
+
+}
+.progressBoxRow {
+  display:flex;
+  flex-direction:row;
+  align-items:base-line;
+  justify-content:center;
+  text-align:center;
+}
+.progressIcons {
+  width:5rem;
+  height:5rem;
+  text-align:center;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* ---- End Progress Home Page ---- */
+
+/* ---- Register Activity Button ---- */
+.formBox {
+  display:flex;
+  flex-direction:column;
+  
+}
+
+/* ---- ProfileBig ---- */
+
+.profileBig {
+  position: relative;
+  width: 19rem auto;
+  margin: 1rem;
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  border-radius: 1rem;
+  box-shadow: 0 0.7rem 1rem rgba(0, 0, 0, 0.1), 0 0.4rem 0.6rem rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  text-align: center;
+  justify-content: space-evenly;
+}
+
+.profileBig img {
+    width: auto;
+    height: auto;
+    border-radius: 50%;
+    margin-top: -50px;
+    border: 4px solid #fff;
+    box-shadow: 0 0.7rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+
+.profileBigRest {
+  border-top: 0.2rem solid #ddd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.profileBigRest li{
+  margin: 1.5rem 2rem 1.5rem 2rem;
+
+}
+
+#profileBigTitle {
+  font-size: 3.6rem;
+  font-weight: bold;
+  color: #333;
+}
+
+#profileBigTitle:hover {
+  color: #2575fc;
+}
+
+.profileGrid {
+  display: flex;
+  align-items: center; 
+  gap: 2rem; /* spacing between label & input */
+  width: 60%; 
+  margin-bottom: 10px;
+  border-bottom: 0.1rem solid #ddd;
+}
+
+.profileGridEmpty {
+  flex: 0.7;
+}
+
+.profileGrid label{
+  font-size: 1.7rem;
+  font-weight: bold;
+  text-align: right;
+  min-width: 6rem;
+  flex: 1;
+}
+
+.profileGrid input{
+  font-size: 1.4rem;
+  margin: 1rem 0 1rem 0;
+  text-align: center;
+  height: 3rem;
+  border: 0.01rem solid #333;
+  border-radius: 0.4rem;
+  background-color: white;
+  flex:1;
+}
+
+.profileGrid input,
+.profileGrid select {
+  width: 80%;
+}
+
+.profileGrid select{
+  height: 3rem;
+  font-size: 1.4rem;
+  text-align: center;
+  border: 0.01rem solid #333;
+  border-radius: 0.4rem;
+  background-color: white;
+  cursor: pointer;
+  flex:1;
+
+}
+
+.profileBig button {
+  margin: 2rem auto 1rem auto;
+  padding: 1rem 2rem;
+  background-color: #070707;
+  color: white;
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  font-size: 2rem;
+  transition: background-color 0.3s;
+
+}
+
+.profileBig button:hover {
+  background-color: #003d80;
+}
+
+/* ---- End of ProfileBig ---- */

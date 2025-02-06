@@ -2,24 +2,30 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MainLayout from "./layouts/MainLayout";
-import Dashboard from "./pages/Dashboard";
+import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Progress from "./pages/Progress";
-import Friends from "./pages/Friends";
+import Activity from "./pages/Activity";
+import TestPageNoNav from "./pages/TestPageNoNav";
+import Albert from "./pages/Albert";
+import "./styles/responsive.css";
 
 function App() {
   return (
     <BrowserRouter>
-      <MainLayout>
-        <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/progress" element={<Progress />} />
-          <Route path="/friends" element={<Friends />} />
-        </Routes>
-      </MainLayout>
+      <Routes>
+        <Route element={<MainLayout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/Profile" element={<Profile />} />
+          <Route path="/Progress" element={<Progress />} />
+          <Route path="/Activity" element={<Activity />} />
+          <Route path="/Albert" element={<Albert />} />
+        </Route>
+        <Route path="/TestPageNoNav" element={<TestPageNoNav />} />
+      </Routes>
     </BrowserRouter>
   );
 }
 
 export default App;
+
