@@ -10,22 +10,21 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:8081")
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/api/activities")
 public class ActivityController {
     private final ActivityService activityService;
 
-    // Connects the controller to the repository
-    //@Autowired
-    //ActivityRepository activityRepository;
 
     // Constructor
     public ActivityController(ActivityService activityService) {
         this.activityService = activityService;
     }
 
-    // This uses the ActivityService "getter", which is again implemented from its class
+    //  ------------------ GET ------------------
+    //  ---------INSERT ALL GETTERS HERE---------
+
     @GetMapping()
     public List<Activity> getActivities() {
         return activityService.getAllActivities();
@@ -46,9 +45,20 @@ public class ActivityController {
         return activityService.getActivityById(id);
     }
 
+    //  ------------------ POST ------------------
+    //  ---------INSERT ALL POSTERS HERE----------
+
     @PostMapping
     public ResponseEntity<Activity> addActivity(@RequestBody Activity activity) {
         Activity savedActivity = activityService.saveActivity(activity);
         return ResponseEntity.status(HttpStatus.CREATED).body(savedActivity);
     }
+
+
+    //  ------------------ PUT ------------------
+    //  ---------INSERT ALL PUTTERS HERE---------
+
+
+    //  ------------------ DELETE ------------------
+    //  ---------INSERT ALL DELETES HERE------------
 }

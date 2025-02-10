@@ -11,11 +11,11 @@ public class ActivityServiceImpl implements ActivityService {
     @Autowired
     private ActivityRepository activityRepository;
 
+    //  ------------------ GET ------------------
     @Override
     public List<Activity> getAllActivities() {
         return activityRepository.findAll();
     }
-
 
     @Override
     public List<Activity> getActivitiesByType(String type) {
@@ -32,6 +32,7 @@ public class ActivityServiceImpl implements ActivityService {
         return activityRepository.findById(id).orElse(null);
     }
 
+    //  ------------------ SAVE ------------------
     @Override
     public Activity saveActivity(Activity activity) {
         return activityRepository.save(activity);

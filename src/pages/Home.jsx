@@ -1,11 +1,11 @@
-// src/pages/Dashboard.js
+// src/pages/Dashboard.jsx
 import React from "react";
 import ActivityFeed from "../components/ActivityFeed";
 import SideBar from "../components/SideBar";
 import ProfileCard from "../components/ProfileCard";
 import ProgressHomepg from "../components/ProgressHomepg";
-import TestAdd from "../components/TestAdd";
 import TestForm from "../components/TestForm";
+import TestData from "../components/TestData"
 
 const Home = () => {
   return (
@@ -13,9 +13,9 @@ const Home = () => {
       <div className="home-wrapper"> {/* Flex wrapper */}
         <div className="flex-empty"></div> {/* Adds space to the side */}
           <div className="home-main"> {/* main content of HomePage */}
-            <TestAdd />
-            <TestForm />
             <ProgressHomepg />
+            <TestData />
+            <TestForm />
             <ActivityFeed />
           </div>        
           <div className="home-sidebar"> {/* Side content */}
