@@ -1,9 +1,11 @@
 package org.example.workoutapp.controller;
 
 import org.example.workoutapp.model.Activity;
-import org.example.workoutapp.repository.ActivityRepository;
+//import org.example.workoutapp.repository.ActivityRepository;
 import org.example.workoutapp.service.ActivityService;
-import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,8 +17,8 @@ public class ActivityController {
     private final ActivityService activityService;
 
     // Connects the controller to the repository
-    @Autowired
-    ActivityRepository activityRepository;
+    //@Autowired
+    //ActivityRepository activityRepository;
 
     // Constructor
     public ActivityController(ActivityService activityService) {
@@ -42,5 +44,11 @@ public class ActivityController {
     @GetMapping("/{id}")
     public Activity getActivityById(@PathVariable Long id) {
         return activityService.getActivityById(id);
+    }
+
+    @PostMapping
+    public ResponseEntity<Activity> addActivity(@RequestBody Activity activity) {
+        Activity savedActivity = activityService.saveActivity(activity);
+        return ResponseEntity.status(HttpStatus.CREATED).body(savedActivity);
     }
 }

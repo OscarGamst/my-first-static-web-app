@@ -32,5 +32,10 @@ public class ActivityServiceImpl implements ActivityService {
         return activityRepository.findById(id).orElse(null);
     }
 
+    @Override
+    public Activity saveActivity(Activity activity) {
+        return activityRepository.save(activity);
+    }
+
 
 }

@@ -16,4 +16,5 @@ public interface ActivityService {
 
     Activity getActivityById(Long id);
 
+    Activity saveActivity(Activity activity);
 }
